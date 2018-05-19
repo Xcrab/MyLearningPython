@@ -1,3 +1,4 @@
+# 同步测试
 width = input("Please enter width:")
 
 price_width = 10
