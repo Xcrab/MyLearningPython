@@ -1,3 +1,4 @@
+# 贪婪算法解决覆盖问题，近似解
 states_needed = set(["mt", "wa", "or", "id", "nv", "ut", "ca", "az"])
 stations = {}
 stations["kone"] = set(["id", "nv", "ut"])
@@ -17,5 +18,6 @@ while states_needed:
             states_covered = covered
     states_needed -= states_covered
     final_stations.add(best_station)
+    stations.pop(best_station)        # 去掉已归入最节方案的电台，防止多次访问
 
 print(final_stations)

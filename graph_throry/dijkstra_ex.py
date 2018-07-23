@@ -41,16 +41,16 @@ def find_lowest_cost_node(costs):
 
 
 # 真正算法的实现
-node = find_lowest_cost_node(costs)
-while node is not None:
-    cost = costs[node]
+node = find_lowest_cost_node(costs) # 在未处理的节点中找出开销最小的节点
+while node is not None:             # 这个while循环在所有节点都被处理过后结束
+    cost = costs[node]        
     neighbors = graph[node]
-    for n in neighbors.keys():
+    for n in neighbors.keys():      # 遍历当前节点的所有邻居
         new_cost = cost + neighbors[n]
-        if costs[n] > new_cost:
-            costs[n] = new_cost
-            parents[n] = node
+        if costs[n] > new_cost:     # 如果经过当前节点前往该邻居更近
+            costs[n] = new_cost     # 就更新该邻居的父节点设置为当前节点
+            parents[n] = node       # 将当前节点标记为处理过
     processed.append(node)
-    node = find_lowest_cost_node(costs)
+    node = find_lowest_cost_node(costs) # 找出接下来要处理的节点，并循环
 
 print(costs)

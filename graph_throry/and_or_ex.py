@@ -1,0 +1,8 @@
+fruits = set(["avocado", "tomato", "banana"])
+vegetables = set(["beets", "carrots", "tomato"])
+print("并集")
+print(fruits | vegetables)
+print("交集")
+print(fruits & vegetables)
+print("差集")
+print(fruits - vegetables)

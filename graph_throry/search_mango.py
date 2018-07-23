@@ -1,6 +1,7 @@
 # 导入队列模块
 from collections import deque
 
+# 实现关系图模型
 graph = {}
 graph["you"] = ["alice", "bob", "claire"]
 graph["bob"] = ["anuj", "peggy"]
